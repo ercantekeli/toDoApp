@@ -18,53 +18,39 @@ toButton.addEventListener("click", () => {
     const input = document.createElement("input");
     const label = document.createElement("label");
     const del_icon = document.createElement("a");
+
     del_icon.appendChild(document.createTextNode("❌"));
-    li.className = 'white';
     del_icon.className = "del__icon"
-    input.className = "input_item";
-    input.setAttribute("type", "checkbox");
-    input.id = "süheyl";
-    label.setAttribute("for", "süheyl");
-    label.setAttribute("id", "mehmet");
+    // input.setAttribute("type", "checkbox");
+    input.type = "checkbox"
     label.appendChild(document.createTextNode(toText.value));
     li.appendChild(input);
-    li.appendChild(label)
+    li.appendChild(label);
+    li.appendChild(del_icon);
+
     addList.appendChild(li);
     toText.value = "";
-    li.appendChild(del_icon);
+
     
+
+    let checkBox = document.querySelectorAll("input[type=checkbox]")
+    
+    checkBox.forEach((check)=>{
+        check.addEventListener("change", ()=>{
+            if (check.checked == false){
+                check.parentElement.style.backgroundColor = "white";
+                check.parentElement.style.textDecoration = "none";
+            }
+            else{
+                check.parentElement.style.backgroundColor = "purple";
+                check.parentElement.style.textDecoration = "line-through";
+            }
+    });
+
     del_icon.addEventListener("click", (e) => {
         e.target.parentElement.remove();
     })
 
-    li.addEventListener("click", ()=>{
-        
-        if (li.classList.contains("purple")){
-            li.classList.remove("purple");
-        }
-        else{
-            li.classList.add("purple")
-        };
-
-        // if (li.className == "purple"){
-        //     li.className = "white";
-        // };
-        // if (li.style.backgroundColor == "purple"){
-        //     li.style.backgroundColor = "white";
-        // }
-            
-        
-        
-        // if (li.style.textDecoration != "none"){
-        //     li.style.textDecoration = "line-through";
-        // };
-        // if (li.style.textDecoration != "line-through"){
-        //     li.style.textDecoration = "none";
-        // };
-        // if(label.style.backgroundColor == "white"){
-        //     label.style.backgroundColor = "red"
-        // }
-        
     });
 
     
