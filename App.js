@@ -35,4 +35,24 @@ toButton.addEventListener("click", () => {
     del_icon.addEventListener("click", (e) => {
         e.target.parentElement.remove();
     })
+
+    li.addEventListener("click", ()=>{
+        
+        if (li.style.textDecoration != "none"){
+            li.style.textDecoration = "line-through";
+        };
+        if (li.style.textDecoration != "line-through"){
+            li.style.textDecoration = "none";
+        };
+        // if(label.style.backgroundColor == "white"){
+        //     label.style.backgroundColor = "red"
+        // }
+        // if (li.style.backgroundColor != "purple"){
+        //     li.style.backgroundColor = "red";
+        // };
+        // if (li.style.backgroundColor == "purple");
+        //     li.style.backgroundColor = "white";
+    });
+
+    
 });
