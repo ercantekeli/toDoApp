@@ -71,7 +71,7 @@ li {
     width: 19.5rem;
     height: auto;
     background-color: white;
-    margin: 3px;
+    margin: 30px;
     display: flex;
     position: relative;
     color: grey;
@@ -94,4 +94,13 @@ label{
     width: 17rem;
     overflow-x: auto;
     overflow-y: auto;
+}
+
+.white{
+    background-color: white;
+}
+
+.purple{
+    background-color: purple;
+    text-decoration: line-through;
 }

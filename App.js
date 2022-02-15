@@ -19,7 +19,7 @@ toButton.addEventListener("click", () => {
     const label = document.createElement("label");
     const del_icon = document.createElement("a");
     del_icon.appendChild(document.createTextNode("❌"));
-    li.className = 'list-group-item';
+    li.className = 'white';
     del_icon.className = "del__icon"
     input.className = "input_item";
     input.setAttribute("type", "checkbox");
@@ -32,26 +32,39 @@ toButton.addEventListener("click", () => {
     addList.appendChild(li);
     toText.value = "";
     li.appendChild(del_icon);
+    
     del_icon.addEventListener("click", (e) => {
         e.target.parentElement.remove();
     })
 
     li.addEventListener("click", ()=>{
         
-        if (li.style.textDecoration != "none"){
-            li.style.textDecoration = "line-through";
+        if (li.classList.contains("purple")){
+            li.classList.remove("purple");
+        }
+        else{
+            li.classList.add("purple")
         };
-        if (li.style.textDecoration != "line-through"){
-            li.style.textDecoration = "none";
-        };
+
+        // if (li.className == "purple"){
+        //     li.className = "white";
+        // };
+        // if (li.style.backgroundColor == "purple"){
+        //     li.style.backgroundColor = "white";
+        // }
+            
+        
+        
+        // if (li.style.textDecoration != "none"){
+        //     li.style.textDecoration = "line-through";
+        // };
+        // if (li.style.textDecoration != "line-through"){
+        //     li.style.textDecoration = "none";
+        // };
         // if(label.style.backgroundColor == "white"){
         //     label.style.backgroundColor = "red"
         // }
-        // if (li.style.backgroundColor != "purple"){
-        //     li.style.backgroundColor = "red";
-        // };
-        // if (li.style.backgroundColor == "purple");
-        //     li.style.backgroundColor = "white";
+        
     });
 
     
